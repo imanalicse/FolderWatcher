@@ -175,34 +175,4 @@ public class WatchDir {
         System.err.println("usage: java WatchDir [-r] dir");
         System.exit(-1);
     }
-
-    public static void main(String[] args) throws IOException {
-        System.err.println("Watch directory main");
-        // String currentDir = System.getProperty("user.dir");
-        String currentDir = "C:\\BM\\codehub\\FolderWatcher\\changeFiles";
-        // currentDir = currentDir + "/changeFiles";
-        System.out.println("Current dir using System 2:" + currentDir);
-        // parse arguments
-//        if (args.length == 0 || args.length > 2)
-//            usage();
-//        boolean recursive = false;
-//        int dirArg = 0;
-//        if (args[0].equals("-r")) {
-//            if (args.length < 2)
-//                usage();
-//            recursive = true;
-//            dirArg++;
-//        }
-
-
-
-
-        boolean recursive = false;
-        recursive = true;
-
-        // register directory and process its events
-        Path dir = Paths.get(currentDir);
-        new WatchDir(dir, recursive).processEvents();
-
-    }
 }

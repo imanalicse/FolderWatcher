@@ -14,7 +14,8 @@ public class Main {
 
         // register directory and process its events
         Path dir = Paths.get(currentDir);
-        new WatchDir(dir, recursive).processEvents();
+        WatchDir watchDir = new WatchDir(dir, recursive);
+        watchDir.processEvents();
 
     }
 }
