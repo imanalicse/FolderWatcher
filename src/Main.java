@@ -3,7 +3,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         System.out.println("Hello world!");
 
         String currentDir = "C:\\BM\\codehub\\FolderWatcher\\changeFiles";
