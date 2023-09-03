@@ -12,6 +12,7 @@ public class Main {
         boolean recursive = false;
         recursive = true;
 
+
         // register directory and process its events
         Path dir = Paths.get(currentDir);
         WatchDir watchDir = new WatchDir(dir, recursive);
