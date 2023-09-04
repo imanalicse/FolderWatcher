@@ -144,22 +144,7 @@ public class WatchDir {
 
                 // print out event
                 System.out.format("%s: %s\n", event.kind().name(), child);
-                System.out.println(name);
 
-                String extension = "";
-                int i = name.toString().lastIndexOf('.');
-                if (i > 0) {
-                    extension = name.toString().substring(i+1);
-                }
-                System.out.println("extension "+ extension);
-
-                if (extension.equals("JPG") || extension.equals("jpg")) {
-                    TimeUnit.SECONDS.sleep(1);
-                   //  String destination_dir = "C:/BM/codehub/FolderWatcher/destFiles";
-                    String destination_dir = "C:/xampp/htdocs/rgs-stage-imageapi/image_process/southam/incoming/MappedImages";
-                    Path destination_path = new File(destination_dir + "/" + name).toPath();
-                    Files.copy(child, destination_path, StandardCopyOption.REPLACE_EXISTING);
-                }
 
                 // if directory is created, and watching recursively, then
                 // register it and its sub-directories
@@ -171,6 +156,23 @@ public class WatchDir {
                     } catch (IOException x) {
                         // ignore to keep sample readbale
                     }
+                }
+
+                System.out.println(name);
+
+                String extension = "";
+                int i = name.toString().lastIndexOf('.');
+                if (i > 0) {
+                    extension = name.toString().substring(i+1);
+                }
+                System.out.println("extension "+ extension);
+
+                if (extension.equals("JPG") || extension.equals("jpg")) {
+                    TimeUnit.SECONDS.sleep(3);
+                    //  String destination_dir = "C:/BM/codehub/FolderWatcher/destFiles";
+                    String destination_dir = "C:/xampp/htdocs/rgs-stage-imageapi/image_process/southam/incoming/MappedImages";
+                    Path destination_path = new File(destination_dir + "/" + name).toPath();
+                    Files.copy(child, destination_path, StandardCopyOption.REPLACE_EXISTING);
                 }
             }
 

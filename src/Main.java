@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
         System.out.println("Hello world!");
 
-        String currentDir = "C:\\BM\\codehub\\FolderWatcher\\changeFiles";
+        String currentDir = "C:\\Users\\iman\\Desktop\\images\\S Code\\source";
         System.out.println("Current dir using System 1:" + currentDir);
 
         boolean recursive = false;
